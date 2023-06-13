@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class LoginPage {
-
     private static final Logger logger = LogManager.getLogger("Info");
 
     WebDriver driver;
@@ -38,7 +37,6 @@ public class LoginPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     //Method to set Password

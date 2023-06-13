@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class HomePage {
-
     public static final Logger logger = LogManager.getLogger("Info");
 
     WebDriver driver;
@@ -25,8 +24,6 @@ public class HomePage {
     WebElement makeAppointment;
 
     //Method to click the appointment button
-
-
     public void menuButtonClick()
     {
         try

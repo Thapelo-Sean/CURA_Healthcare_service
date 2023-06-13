@@ -1,7 +1,6 @@
 package POM.pages;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.apache.logging.log4j.LogManager;
@@ -14,12 +13,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
-
 import static POM.test.TestBase.extent;
 
 public class AppointmentPage {
     private static final Logger logger = LogManager.getLogger("Info");
-
 
     @BeforeTest
     public void report1()
@@ -28,7 +25,6 @@ public class AppointmentPage {
         ExtentSparkReporter spark = new ExtentSparkReporter("./Reports/Appointment.html");
         extent.attachReporter(spark);
     }
-
 
     WebDriver driver;
     public AppointmentPage(WebDriver driver)
