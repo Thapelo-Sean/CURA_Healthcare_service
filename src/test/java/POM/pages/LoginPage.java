@@ -26,11 +26,7 @@ public class LoginPage {
     @FindBy(how = How.ID, using = "btn-login") @CacheLookup
     WebElement loginButton;
 
-
-    //Perform actions on the Web Elements
-
-    //Method to set Username.
-
+    //Method to set Username
     public void setUsername (String stringUsername) throws InterruptedException {
         try
         {
@@ -45,7 +41,7 @@ public class LoginPage {
 
     }
 
-    //Method to set Password.
+    //Method to set Password
     public void setPassword (String stringPassword) throws InterruptedException {
         try
         {
@@ -58,7 +54,7 @@ public class LoginPage {
         }
     }
 
-    //Method to click on log in button.
+    //Method to click on log in button
     public void loginButton()
     {
         try
