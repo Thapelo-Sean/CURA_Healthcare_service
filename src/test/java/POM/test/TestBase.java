@@ -31,7 +31,7 @@ public class TestBase {
         try
         {
             System.out.println("Initialization started...");
-            System.setProperty("webdriver.chrome.driver","C:\\Users\\Katan\\OneDrive\\Desktop\\MyAutomation\\Selenium\\chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
             //WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.get(baseUrl);
