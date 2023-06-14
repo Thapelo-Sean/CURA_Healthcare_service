@@ -7,11 +7,17 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 public class LoginTest extends TestBase {
     public static ExtentReports extent;
@@ -65,12 +71,22 @@ public class LoginTest extends TestBase {
             Thread.sleep(500);
             appointmentPage.bookAppointmentButton();
             Thread.sleep(500);
+
+            //Capture screenshot after test
+            TakesScreenshot screenshot = (TakesScreenshot)driver;
+            File source = screenshot.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(source, new File("./Screenshots/TestScreenshot.png"));
+            logger.info("Screenshot captured");
+
             appointmentPage.goToHomePageButtonClick();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             test = extent.createTest("Appointment page navigation test")
                     .log(Status.PASS,"Navigated to the Appointment page and performed actions");
             extent.flush();
+
         } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
