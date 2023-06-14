@@ -92,7 +92,6 @@ public class AppointmentPage {
             e.printStackTrace();
         }
     }
-
     public void bookAppointmentButton() throws InterruptedException {
         try
         {
