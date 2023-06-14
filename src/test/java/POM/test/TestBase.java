@@ -83,7 +83,7 @@ public class TestBase {
     @AfterSuite
     public void tearDown()
     {
-        logger.info("<<<<<<<<<< Test Completed >>>>>>>>>>");
+        logger.info("<<<<<<<<<<< Test Completed >>>>>>>>>>>");
         driver.quit();
     }
 }
