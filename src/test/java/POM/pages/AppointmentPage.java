@@ -49,7 +49,7 @@ public class AppointmentPage {
     public void facilityDropDownButton() throws InterruptedException {
         try
         {
-            logger.info("Methods to perform actions on my Appointment page is executing........");
+            logger.info("Methods to perform actions on my Appointment page is executing.......");
             Select select = new Select(driver.findElement(By.name("facility")));
             select.selectByValue("Hongkong CURA Healthcare Center");
             Thread.sleep(500);
