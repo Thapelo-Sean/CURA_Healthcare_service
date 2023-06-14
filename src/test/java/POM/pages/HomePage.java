@@ -33,7 +33,6 @@ public class HomePage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     public void makeAppointmentClick() throws InterruptedException {
         try

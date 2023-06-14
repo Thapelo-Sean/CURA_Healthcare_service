@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CURA_Healthcare_service" />
+        <module name="CURA_Healthcare_service_Project" />
       </profile>
     </annotationProcessing>
   </component>

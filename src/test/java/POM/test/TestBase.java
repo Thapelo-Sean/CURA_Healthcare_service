@@ -5,10 +5,11 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -24,15 +25,45 @@ public class TestBase {
         spark = new ExtentSparkReporter("./Reports/MyReport.html");
         extent.attachReporter(spark);
     }
+    @BeforeTest
+    @Parameters("browser")
+    public void setupBrowser(String browser)
+    {
+        try
+        {
+            if(browser.equalsIgnoreCase("chrome"))
+            {
+                WebDriverManager.chromedriver().setup();
+
+            } else if (browser.equalsIgnoreCase("FireFox"))
+            {
+                WebDriverManager.chromedriver().setup();
+                driver = new FirefoxDriver();
+            } else if (browser.equalsIgnoreCase("Safari"))
+            {
+                WebDriverManager.safaridriver().setup();
+                driver = new SafariDriver();
+            } else if (browser.equalsIgnoreCase("Microsoft Edge"))
+            {
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+            }
+            else
+            {
+                throw new Exception("Incorrect Browser");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @BeforeSuite
     public void initialization()
     {
         try
         {
-            System.out.println("Initialization started...");
-            WebDriverManager.chromedriver().setup();
-            //WebDriverManager.chromedriver().setup();
+            System.out.println("<<<<<<<<<<Initialization started>>>>>>>>>>");
             driver = new ChromeDriver();
             driver.get(baseUrl);
             driver.manage().deleteAllCookies();
