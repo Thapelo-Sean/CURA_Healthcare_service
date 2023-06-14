@@ -3,6 +3,8 @@ package POM.test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -17,6 +19,7 @@ public class TestBase {
     public  String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
     public static ExtentReports extent;
     public static ExtentSparkReporter spark;
+    private static Logger logger = LogManager.getLogger("Info");
 
     @BeforeTest
     public void report1()
@@ -80,7 +83,7 @@ public class TestBase {
     @AfterSuite
     public void tearDown()
     {
-        System.out.println("Test Completed");
+        logger.info("<<<<<<<<<< Test Completed >>>>>>>>>>");
         driver.quit();
     }
 }
