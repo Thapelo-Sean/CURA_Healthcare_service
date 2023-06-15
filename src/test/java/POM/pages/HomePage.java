@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class HomePage {
-    public static final Logger logger = LogManager.getLogger("Info");
+    private Logger logger = LogManager.getLogger("Info");
 
     WebDriver driver;
     public HomePage(WebDriver driver)
