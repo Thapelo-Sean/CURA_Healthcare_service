@@ -66,7 +66,7 @@ public class TestBase {
     {
         try
         {
-            System.out.println("<<<<<<<<<<Initialization started>>>>>>>>>>");
+            logger.info("<<<<<<<<<<Initialization started>>>>>>>>>>");
             driver = new ChromeDriver();
             driver.get(baseUrl);
             driver.manage().deleteAllCookies();
