@@ -15,7 +15,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -23,7 +22,7 @@ public class LoginTest extends TestBase {
     public static ExtentReports extent;
     public static ExtentSparkReporter spark;
     public static ExtentTest test;
-    private static final Logger logger = LogManager.getLogger("Info");
+    private Logger logger = LogManager.getLogger("Info");
     @BeforeTest
     public void report()
     {
@@ -33,7 +32,8 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void init() {
+    public void init()
+    {
         try
         {
             logger.info("<<<<<<<<<<<<<<<<<<<Executing Test>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -42,7 +42,7 @@ public class LoginTest extends TestBase {
             HomePage homePage = PageFactory.initElements(driver, HomePage.class);
             homePage.menuButtonClick();
             homePage.makeAppointmentClick();
-            test = extent.createTest("Home page navigation test").assignAuthor("Thapelo Matji")
+            test = extent.createTest("Verification of Home page").assignAuthor("Thapelo Matji")
                     .log(Status.PASS,"Navigated to the home page and performed actions");
 
             //Object of the LoginPage
@@ -53,7 +53,7 @@ public class LoginTest extends TestBase {
             loginPage.setPassword("ThisIsNotAPassword");
             Thread.sleep(500);
             loginPage.loginButton();
-            test = extent.createTest("Login page navigation test")
+            test = extent.createTest("Verification of login page")
                     .log(Status.PASS,"Navigated to the Login page and performed actions");
 
             //Object of the Make appointment page
@@ -72,19 +72,20 @@ public class LoginTest extends TestBase {
             appointmentPage.bookAppointmentButton();
             Thread.sleep(500);
 
-            //Capture screenshot after test
+            //Capture screenshot after making an Appointment
             TakesScreenshot screenshot = (TakesScreenshot)driver;
             File source = screenshot.getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(source, new File("./Screenshots/TestScreenshot.png"));
-            logger.info("Screenshot captured");
+            logger.info("Screenshot captured.........");
 
             appointmentPage.goToHomePageButtonClick();
-            Thread.sleep(1000);
-            test = extent.createTest("Appointment page navigation test")
+            Thread.sleep(500);
+            test = extent.createTest("Verification of Appointment page")
                     .log(Status.PASS,"Navigated to the Appointment page and performed actions");
             extent.flush();
 
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
