@@ -26,28 +26,30 @@ public class LoginPage {
     WebElement loginButton;
 
     //Method to set Username
-    public void setUsername (String stringUsername) throws InterruptedException {
+    public void setUsername (String stringUsername) throws InterruptedException
+    {
         try
         {
             logger.info("Methods to perform actions on the Login page is executing...........");
             username.clear();
             username.sendKeys(stringUsername);
-            logger.info("Valid username entered.");
             Thread.sleep(500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
 
     //Method to set Password
-    public void setPassword (String stringPassword) throws InterruptedException {
+    public void setPassword (String stringPassword) throws InterruptedException
+    {
         try
         {
             password.clear();
             password.sendKeys(stringPassword);
-            logger.info("Valid password entered");
             Thread.sleep(500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
