@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeTest;
 import static POM.test.TestBase.extent;
 
 public class AppointmentPage {
-    private static final Logger logger = LogManager.getLogger("Info");
+    private Logger logger = LogManager.getLogger("Info");
 
     @BeforeTest
     public void report1()
@@ -46,7 +46,8 @@ public class AppointmentPage {
     @FindBy(how = How.LINK_TEXT, using = "Go to Homepage") @CacheLookup
     WebElement goToHomePageButton;
 
-    public void facilityDropDownButton() throws InterruptedException {
+    public void facilityDropDownButton() throws InterruptedException
+    {
         try
         {
             logger.info("Methods to perform actions on my Appointment page is executing.......");
@@ -58,7 +59,8 @@ public class AppointmentPage {
         }
     }
 
-    public void reAdmissionCheckBoxButton() throws InterruptedException {
+    public void reAdmissionCheckBoxButton() throws InterruptedException
+    {
         try
         {
             reAdmissionCheckBoxButton.click();
@@ -68,22 +70,25 @@ public class AppointmentPage {
         }
     }
 
-    public void healthcareRadioButton() throws InterruptedException {
+    public void healthcareRadioButton() throws InterruptedException
+    {
         try
         {
-            healthcareRadioButton.click();  //three options
+            healthcareRadioButton.click();
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void setVisitDate (String stringVisitDate) throws InterruptedException {
+    public void setVisitDate (String stringVisitDate) throws InterruptedException
+    {
         visitDate.sendKeys(stringVisitDate);
         Thread.sleep(500);
     }
 
-    public void commentTextField (String stringCommentTextField) throws InterruptedException {
+    public void commentTextField (String stringCommentTextField) throws InterruptedException
+    {
         try
         {
             commentTextField.sendKeys(stringCommentTextField);
@@ -92,7 +97,9 @@ public class AppointmentPage {
             e.printStackTrace();
         }
     }
-    public void bookAppointmentButton() throws InterruptedException {
+
+    public void bookAppointmentButton() throws InterruptedException
+    {
         try
         {
             bookAppointmentButton.click();
@@ -107,7 +114,8 @@ public class AppointmentPage {
         }
     }
 
-    public void goToHomePageButtonClick() throws InterruptedException {
+    public void goToHomePageButtonClick() throws InterruptedException
+    {
         try
         {
             goToHomePageButton.click();
