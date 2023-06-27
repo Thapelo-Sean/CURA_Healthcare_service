@@ -14,7 +14,8 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBase
+{
     static WebDriver driver = null;
     public  String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
     public static ExtentReports extent;
@@ -72,11 +73,11 @@ public class TestBase {
             driver.manage().deleteAllCookies();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            String actualUrl = driver.getCurrentUrl();
-            String expectedUrl = "https://katalon-demo-cura.herokuapp.com/";
-            Assert.assertEquals(actualUrl, expectedUrl);
+            String expectedUrl = baseUrl;
+            Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
 
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }

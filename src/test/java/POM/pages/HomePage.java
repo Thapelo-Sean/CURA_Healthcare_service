@@ -30,17 +30,20 @@ public class HomePage {
         {
             logger.info("Methods to perform actions on home page is executing..........");
             MenuButton.click();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
-    public void makeAppointmentClick() throws InterruptedException {
+    public void makeAppointmentClick() throws InterruptedException
+    {
         try
         {
             makeAppointment.click();
             Thread.sleep(500);
             logger.info("<<<<<<<<<<<<Methods to perform actions on home page executed>>>>>>>>>>>>>>>");
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
