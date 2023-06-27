@@ -15,7 +15,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import static POM.test.TestBase.extent;
 
-public class AppointmentPage {
+public class AppointmentPage
+{
     private Logger logger = LogManager.getLogger("Info");
 
     @BeforeTest
@@ -54,7 +55,8 @@ public class AppointmentPage {
             Select select = new Select(driver.findElement(By.name("facility")));
             select.selectByValue("Hongkong CURA Healthcare Center");
             Thread.sleep(500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -76,7 +78,8 @@ public class AppointmentPage {
         {
             healthcareRadioButton.click();
             Thread.sleep(500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -93,7 +96,8 @@ public class AppointmentPage {
         {
             commentTextField.sendKeys(stringCommentTextField);
             Thread.sleep(500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -109,7 +113,8 @@ public class AppointmentPage {
                     .addScreenCaptureFromPath("./Reports/Appointment.png");
             extent.flush();
             Thread.sleep(500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -121,7 +126,8 @@ public class AppointmentPage {
             goToHomePageButton.click();
             Thread.sleep(500);
             logger.info("<<<<<<<<<<<Methods performed on the appointment page executed>>>>>>>>>>>");
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
